@@ -25,7 +25,7 @@ export const Controls = () => {
     (state) => [state.nuts, state.honey],
     shallow
   )
-
+      // ?? NOT WORKING
   // const treats = useBearStore(
   //   (state) => state.treats,
   //   (oldTreats, newTreats) => compare(oldTreats, newTreats)
