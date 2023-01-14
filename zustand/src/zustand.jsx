@@ -23,7 +23,7 @@ export const Everything = () => {
 // Fetch entire state 
 // ! Component refresh every state change
   const state = useBearStore()
-  // return console.log(state)
+  return console.log(state)
 }
 
 export const StateSlices= () => {
@@ -33,20 +33,20 @@ export const StateSlices= () => {
 
   // const nuts = useBearStore((state) => state.nuts)
   // const honey = useBearStore((state) => state.honey)
+  // or Array
+// const [nuts, honey] = useBearStore(
+// (state) => [state.nuts, state.honey],
+// shallow
             // or both as Object
-  // const { nuts, honey } = useBearStore(
-  //   (state) => ({ nuts: state.nuts, honey: state.honey }),
-  //   shallow
-  // )
-            // or Array
-  const [nuts, honey] = useBearStore(
-  (state) => [state.nuts, state.honey],
-  shallow
-)
-
+  const { nuts, honey } = useBearStore(
+    (state) => ({ nuts: state.nuts, honey: state.honey }),
+    shallow
+  )
   // Mapped picks, re-renders the component when state.treats changes in order, count or keys
+
   const treats = useBearStore((state) => Object.keys(state.treats), shallow)
 
-  return console.log({nuts, honey})
+
+  return console.log({})
 }
 
