@@ -19,34 +19,18 @@ export const Controls = () => {
 }
 
 
-export const Everything = () => {
-// Fetch entire state 
-// ! Component refresh every state change
   const state = useBearStore()
-  return console.log(state)
-}
-
-export const StateSlices= () => {
-// Select multiple state slices
-// detect changes with strict equality (old === new)
-// efficient for atomic state picks
-
-  // const nuts = useBearStore((state) => state.nuts)
-  // const honey = useBearStore((state) => state.honey)
-  // or Array
-// const [nuts, honey] = useBearStore(
-// (state) => [state.nuts, state.honey],
-// shallow
-            // or both as Object
-  const { nuts, honey } = useBearStore(
-    (state) => ({ nuts: state.nuts, honey: state.honey }),
+ 
+  const [nuts, honey] = useBearStore(
+    (state) => [state.nuts, state.honey],
     shallow
   )
-  // Mapped picks, re-renders the component when state.treats changes in order, count or keys
+      // ?? NOT WORKING
+  // const treats = useBearStore(
+  //   (state) => state.treats,
+  //   (oldTreats, newTreats) => compare(oldTreats, newTreats)
+  // )
 
-  const treats = useBearStore((state) => Object.keys(state.treats), shallow)
+  return console.log({nuts},{treats})
 
-
-  return console.log({})
-}
 

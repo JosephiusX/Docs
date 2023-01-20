@@ -1,4 +1,4 @@
-import {BearCounter, Controls, Everything, StateSlices} from './zustand'
+import {BearCounter, Controls, Everything} from './zustand'
 
 
 function App() {
@@ -8,7 +8,6 @@ function App() {
       <BearCounter />
       <Controls />
       <Everything />
-      <StateSlices />
     </>
   )
 }
